@@ -1,0 +1,160 @@
+header{
+  position: sticky;
+  display: flex;
+  top: 0px;
+  height: 100px;
+  align-items: center;
+  z-index: 100;
+  /* background-color: black; */
+  
+}
+.element{
+  width: 33%;
+}
+
+.mainP{
+  display: flex;
+}
+
+.mainP .element1{
+  width: 100%;
+}
+.mainP #profile {
+  height: 50px; 
+  padding-left: 30px;
+}
+
+.mainP #logo{
+  font-family: 'DMSerif';
+  font-weight: 500;
+  font-size: 35px;
+  text-align: center;
+
+}
+#logo a {
+  text-decoration-line: none;
+  color: #FFFFFF;
+  font-size: 60px;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+#elementMenu {
+  text-align: right;
+  padding-right: 30px;
+}
+.element #menutap {
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+
+}
+
+#menutap{
+  font-family: 'DMSerif';
+  font-weight: 500;
+  font-size: 30px;
+  color: white;
+  text-align: right;
+  list-style: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+}
+
+#menuTapPage{
+  display: none;
+  background-color: black;
+  width: 1920px;
+  height: 1080px;
+  position :absolute;
+  top : 100px;
+  left: 0;
+}
+.menuPage{
+  display: flex;
+  flex-direction: column;
+  background-color: #063F3B;
+  width: 100%;
+  height: 600px;
+}
+.companyContents{
+  display: flex;
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  width: 100%;
+  height: 95%;
+}
+.companyContents #companyInfo{
+  letter-spacing : 4px;
+  text-align: right;
+  font-size: 25px;
+  color: #CDCBCB;
+}
+.companyContents #socialShare img {
+  width: 376PX;
+  height: 55px;
+  margin: 10px;
+}
+.menu {
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  width: 50%;
+  font-size: 72px;
+  list-style-type: none;
+  color: #063F3B;
+  text-align: left;
+  margin-left: 60px;
+}
+.menu ul {
+  list-style-type: none;
+  
+  
+}
+.menu ul li {
+  margin: 20px 0px;
+
+}
+.menu ul li a {
+  text-decoration-line: none;
+  
+}
+
+
+/* .menu li{
+  color: green;
+} */
+
+
+
+.menu ul li a:visited, a:link{
+  color: #CDCBCB;
+  
+}
+#rightContent {
+  width: 50%;
+  text-align: right;
+  margin-right: 60px;
+  margin-top: 320px;
+}
+
+#policy {
+  font-family: 'GmarketSans';
+  font-size: 25px;
+  width: 100%;
+  height: 10%;
+  list-style: none;
+  text-align: center;
+}
+#policy ul li {
+  list-style-type: none;
+  display: inline;
+  
+}
+#policy ul li a {
+  color: #CDCBCB;
+  text-decoration-line: none;
+  
+}
+#policy ul li a:visited{
+  color: #CDCBCB;
+
+}

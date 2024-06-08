@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <title>GAXGA</title>
+</head>
+<body>
+<th:block th:replace="~{public/layouts/header2 :: header}"></th:block>
+
+<div class="video-container">
+    <video autoplay loop muted>
+        <source src="/img/video.mp4" type="video/mp4">
+    </video>
+</div>
+<!--메인 색상을 바꾸면 스크롤 이벤트 전 색상이 어색함 누끼따서 해야함-->
+
+<div class = "page">
+    <img src="/img/main.png" width= 100% height=100% alt="">
+    <p id="insertP" class = "goText">떠나볼까요?</p>
+</div>
+
+<div class = "page">
+    <div id="bar1" class="contentBar1"></div>
+    <div id="bar2" class="contentBar2"></div>
+    <div id="bar3" class="contentBar3"></div>
+    <div id="bar4" class="contentBar4"></div>
+    <div id="pageContent1">
+        <div id="pageInfo1">
+            <p><span>여행지 정보</span>를</p>
+            <p><span>검색</span>하고 싶다면</p>
+            <p><span>원하는 테마</span>에 맞춰</p>
+            <p><span>여행</span>을 떠나고 싶다면</p>
+        </div>
+        <div id="pageImg1">
+<!--            <div class="p1-slide6">-->
+                <a th:href="@{/gabojago}">
+                    <img src="/img/maingabojago.png" alt="가보자고이동">
+                </a>
+<!--            </div>-->
+        </div>
+
+        <div class="p1-slide7">
+            <div id="GaInfo1">
+                <p><span>가보자고</span>로</p> <br>
+                <p>가보자고</p>
+            </div>
+        </div>
+    </div>
+    <div id="imgInfo1">
+        <p>이미지로 가보자고 페이지 이동</p>
+    </div>
+</div>
+
+<div class = "page">
+    <img src="/img/main.png" width=100% height=100% alt="">
+    <p id="insertP2" class="comeText">추억을 남겨볼까요?</p>
+</div>
+
+<div class = "page">
+    <div id="bar5" class="contentBar5"></div>
+    <div id="bar6" class="contentBar6"></div>
+    <div id="bar7" class="contentBar7"></div>
+    <div id="bar8" class="contentBar8"></div>
+    <div id="pageContent2">
+        <div id="pageImg2">
+                <a th:href="@{/gabowatdago}">
+                    <img src="/img/maingabwatdago.png" alt="">
+                </a>
+        </div>
+        <div id="pageInfo2">
+            <p><span>여행 후기글</span>을</p>
+            <p><span>검색</span>하고 싶다면</p>
+            <p><span>여행 테마</span>에 맞춰</p>
+            <p><span>게시글을 작성</span>하고싶다면</p>
+        </div>
+        <div id="GaInfo2">
+            <p><span>가봤다고</span>로</p> <br>
+            <p>가보자고</p>
+        </div>
+    </div>
+    <div id="imgInfo2">
+        <p>이미지로 가봤다고 페이지 이동</p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class = page>
+        <div id="contents">
+            <div id="top">
+                <div id="inform1">
+                    <p>(주)GAXGA | 대표 : 김인선</p> <br>
+                    <p>고객센터 031.9941.0082 | 팩스 02.9941.0082</p> <br>
+                    <p>주소 : 경기도 안산시 상록구 광덕1로 375 강우프라자 5층 이젠컴퓨터아카데미 안산캠퍼스</p>
+                </div>
+                <div id="backTop" style="cursor: pointer">
+                    <p>-</p>
+                    <p>--</p>
+                    <p>---</p>
+                    <p>Back To Top</p>
+                </div>
+            </div>
+            <div id="policy2">
+                <p><a href="/terms.html">이용약관   |</a><a href="/privacy.html">   개인정보처리방침   |</a><a href="/copyright.html">   저작권정책</a></p>
+            </div>
+        </div>
+        <div id="footerImg">
+            <img src="/img/footerGAXGA2.png" alt="">
+        </div>
+    </div>
+</footer>
+
+<script th:src="@{js/menu.js}"></script>
+<script th:src="@{js/main.js}"></script>
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header class="--header" th:fragment="header">
+    <div class = "mainP" id="mainPColor" >
+        <div id="profile" class="element">
+           <a th:href="@{/myPage}">
+            <img src="/img/profile.png" width=45px height=45px  alt="프로필">
+           </a>
+        </div>
+        <div id="logo" class="element" width= 45px height=45px>
+            <h1><a th:href="@{/main}">GAXGA</a></h1>
+        </div>
+        <div class="element" id="elementMenu">
+            <button id="menuTap" onclick="activeTab()" >MENU</button>
+            <div id="menuTapPage">
+                <div class="menuPage">
+                    <div class="companyContents">
+                        <div class="menu">
+                            <nav>
+                                <ul>
+                                    <li><a th:href="@{/main}">HOME</a></li>
+                                    <li><a th:href="@{/gabojago}">가보자고</a></li>
+                                    <li><a th:href="@{/gabowatdago}">가봤다고</a></li>
+                                    <li><a th:href="@{/event}">EVENT</a></li>
+                                    <th:block sec:authorize="isAnonymous()">
+                                        <li><a th:href="@{/login}">MY PAGE</a></li>
+                                    </th:block>
+                                    <th:block sec:authorize="isAuthenticated()">
+                                        <li><a th:href="@{/myPage}">MY PAGE</a></li>
+                                    </th:block>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="hRightContent">
+                            <div id="companyInfo">
+                                <span>(주)GAXGA | 대표 : 김인선</span> <br>
+                                <span>고객센터 031.9941.0082 | 팩스 02.9941.0082</span> <br>
+                                <span>주소 : 경기도 안산시 상록구 광덕1로 375 <br>
+                                            강우프라자 5층 이젠컴퓨터아카데미 안산캠퍼스</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="policy">
+                        <ul>
+                            <li><a th:href="@{terms.html}">이용약관   |</a></li>
+                            <li><a th:href="@{privacy.html}">   개인정보처리방침   |</a></li>
+                            <li><a th:href="@{copyright.html}">   저작권정책</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</html>

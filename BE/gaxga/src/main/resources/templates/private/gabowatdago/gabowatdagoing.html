@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/fonts.css}">
+  <link rel="stylesheet" th:href="@{/css/post_result_.css}">
+  <title>GAXGA</title>
+</head>
+<body>
+<th:block th:replace="~{public/layouts/header2 :: header}"></th:block>
+
+
+<div>
+  <div class="WaArea">
+    <div class="WaLeft">
+      <div class="WaName"><a href="/gabowatdago">가봤다고</a></div>
+      <div class="WaProfile">
+        <div class="WaProfileA">
+          <div class="WaImg-area">
+            <div><img th:src="@{'/upload/'+${userInfo.gaP_Image}}" alt=""></div>
+          </div>
+          <div class="WaList">
+<!--            왼쪽상단에 표시될 게시글 리스트 출력 -> 로그인한 사용자의 USERCODE와 일치하면 해당 유저의 게시글 표시-->
+            <div id="myBoardList" style="" th:each="myBoardList:${myBoardList}">
+              <a style="align-content: center" th:href="@{'/gabowatdago/'+*{myBoardList.id}}" th:text="*{myBoardList.title}"></a>
+            </div>
+          </div>
+        </div>
+        <div class="WaProfileB">
+          <div class="WaUserName" th:text="${gaNick}"></div>
+          <div class="WaEmail" th:text="${gaEmail}"></div>
+        </div>
+      </div>
+      <div class="intro">
+        <div th:text="${gaNick} + '님! 근처의 추천 여행지를 소개드려요.'"></div>
+      </div>
+      <div class="review-list-box">
+
+        <div class="review-list" th:each="Gw:${Gangwon}">
+          <div class="review-image">
+            <img th:src="@{'/' + ${Gw.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name">
+              <a th:href="@{'/gabojagoing/'+${Gw.id}}" th:text="${Gw.name}" target="_blank"></a>
+            </div>
+            <div class="review-address"><span th:text="${Gw.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Gg :${Gyeonggi}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Gg.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Gg.id}}"  th:text="${Gg.name}"></a></div>
+            <div class="review-address"><span th:text="${Gg.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Gn :${Gyeongnam}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Gn.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Gn.id}}"  th:text="${Gn.name}"></a></div>
+            <div class="review-address"><span th:text="${Gn.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Gb :${Gyeongbuk}">
+          <div class="review-image">
+            <img th:src="@{'/' + ${Gb.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Gb.id}}"  th:text="${Gb.name}"></a></div>
+            <div class="review-address"><span th:text="${Gb.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Gj :${Gwangju}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Gj.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Gj.id}}"  th:text="${Gj.name}"></a></div>
+            <div class="review-address"><span th:text="${Gj.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Dj :${Daejeon}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Dj.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Dj.id}}"  th:text="${Dj.name}"></a></div>
+            <div class="review-address"><span th:text="${Dj.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Dg :${Daegu}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Dg.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Dg.id}}"  th:text="${Dg.name}"></a></div>
+            <div class="review-address"><span th:text="${Dg.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Bs :${Busan}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Bs.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Bs.id}}"  th:text="${Bs.name}"></a></div>
+            <div class="review-address"><span th:text="${Bs.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="So :${Seoul}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${So.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${So.id}}"  th:text="${So.name}"></a></div>
+            <div class="review-address"><span th:text="${So.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Sj :${Sejong}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Sj.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Sj.id}}"  th:text="${Sj.name}"></a></div>
+            <div class="review-address"><span th:text="${Sj.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Us :${Ulsan}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Us.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Us.id}}"  th:text="${Us.name}"></a></div>
+            <div class="review-address"><span th:text="${Us.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Ic :${Incheon}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Ic.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Ic.id}}"  th:text="${Ic.name}"></a></div>
+            <div class="review-address"><span th:text="${Ic.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Jn :${Jeonnam}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Jn.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Jn.id}}"  th:text="${Jn.name}"></a></div>
+            <div class="review-address"><span th:text="${Jn.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Jb :${Jeonbuk}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Jb.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Jb.id}}"  th:text="${Jb.name}"></a></div>
+            <div class="review-address"><span th:text="${Jb.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Jj :${Jeju}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Jj.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Jj.id}}"  th:text="${Jj.name}"></a></div>
+            <div class="review-address"><span th:text="${Jj.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Cn :${Chungnam}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Cn.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Cn.id}}"  th:text="${Cn.name}"></a></div>
+            <div class="review-address"><span th:text="${Cn.state}"></span></div>
+          </div>
+        </div>
+        <div class="review-list" th:each="Cb :${Chungbuk}" >
+          <div class="review-image">
+            <img th:src="@{'/' + ${Cb.img}}" alt="">
+          </div>
+          <div class="review-info">
+            <div class="review-name"><a th:href="@{'/gabojagoing/'+${Cb.id}}"  th:text="${Cb.name}"></a></div>
+            <div class="review-address"><span th:text="${Cb.state}"></span></div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="WaRight" th:object="${gabowatdago}">
+      <div class="post-result" style="margin-right: 25px">
+        <div class="title-box" style="height: 15%">
+          <input type="hidden" id="latitude" th:value="*{lat}">
+          <input type="hidden" id="longitude" th:value="*{lng}">
+          <div class="post-title" th:text="*{title}"></div>
+        </div>
+        <div class="intro-area">
+          <div class="post-info">
+            <div class="writer" th:text="'작성자 : '+ *{gaNick}"> </div>
+            <div class="date">
+              게시날짜:
+              <span th:text="*{#temporals.format(regDate, 'yyyy.MM.dd HH:mm:ss')}"></span>
+            </div>
+            <div class="locTag">
+              <div class="loc" th:text="'지역 : '+ *{local}">
+              </div>
+            </div>
+          </div>
+          <div class="delete">
+            <div>
+              <img id="like_before" src="/img/빈하트.png">
+              <img id="like_after" src="/img/빨간하트.png" style="display: none">
+            </div>
+            <div>
+              <span class="likeCount" th:text="*{likeCount} + '명이 좋아요 한 게시글 입니다'"></span>
+            </div>
+            <div>
+              <!--            <--로그인한사람의 nickname과 게시글상의 nickname을 비교하여 일치하면 수정 삭제 버튼을 출력한다.-->
+              <a th:if="${gaId == gabowatdago.gaId}" th:href="@{'/gabowatdago/' + ${id} + '/edit'}"><input type="button" value="수정" style="line-height: 0.6;" id="updateBtn"></a>
+              <a th:if="${gaId == gabowatdago.gaId}" th:href="@{'/gabowatdago/' + ${id} + '/delete'}"><input type="button" value="삭제" style="line-height: 0.6;" id="board_deleteBtn" onclick="return delOk()" ></a>
+              <input type="button" id="listBtn" value="목록 보기" style="width: 15%; line-height: 0.6;" onclick="window.location.href='/gabowatdago'">
+            </div>
+          </div>
+        </div>
+        <div class="main-box">
+          <div class="image-box">
+            <div class="slider__wrap">
+              <div class="slider__img" th:text="*{image}"></div>
+              <div class="slider__thumb"></div>
+              <div class="slider__btn">
+                <a href="#" class="prev" title="이전이미지">&lang;</a>
+                <a href="#" class="next" title="다음이미지">&rang;</a>
+              </div>
+            </div>
+          </div>
+          <button style="display: none" type="button" id="test"></button>
+          <div class="text-box" th:text="*{content}">
+          </div>
+<!--          <button id="deleteStorage">스토리지삭제</button>-->
+          <h3>여행지 주소</h3><br>
+          <div style="font-family: GmarketSans; color:#6A6A6A" th:text="*{address}"> </div>
+          <div style="font-family: GmarketSans; color:#6A6A6A" th:text="*{de_address}"></div>
+          <div id="maps"></div>
+          <div class="comment-container">
+            <div class="input-box">
+              <form class="comment-input" onsubmit="return cmtValidation()">
+                <input style ="width: 20%; background-color: #cccccc"  id="client" type ="text" maxlength="10" th:value="${gaNick}" readonly>
+                <textarea style ="width: 80%;" id="comment" type ="text" placeholder="작성자에게 댓글을 남겨주세요"></textarea>
+                <!--현재 페이지의 게시글 id 정보 전송-->
+                <input type="hidden" id="new-comment-gabowatdago_id" th:value="*{id}">
+                <!-- 로그인한 유저의 userCode 전송-->
+                <input type="hidden" id="like_input" th:value="${user}">
+                <input id="comment-save" type="submit" value="댓글 작성" >
+              </form>
+            </div>
+            <div class="comment-list-box">
+              <div class="cmt_container" th:each="cmt :${cmts}" style="margin: 10px; background-color: ghostwhite">
+                <h5 class="cmt_title"  style="display: flex;">
+                  <span style="margin-right: auto" th:text="${cmt.nickname}"></span>
+                  <div>
+                    <button th:if="${gaNick == cmt.nickname}" type="button" id="deleteBtn"
+                            th:data-comment-id="${cmt.id}">삭제</button>
+                  </div>
+                  <span th:text="'작성 시간 : ' + ${#temporals.format(cmt.regDate, 'yyyy.MM.dd HH:mm:ss')}" style="margin-right: 5px; margin-left: 25px"></span>
+                </h5>
+                <div class="cmt-body">
+                  <p class="card-title" th:text="${cmt.body}"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script th:src="@{'//dapi.kakao.com/v2/maps/sdk.js?appkey=6d7e2f086ffa97eb8f4b35fa8cc12439&libraries=services'}"></script>
+<script th:src="@{/js/post_result.js}"></script>
+<script th:src="@{/js/menu.js}"></script>
+<script th:src="@{/js/like.js}"></script>
+<script>
+  //오라클 연동 전에 사용하는 임시 스토리지 삭제 버튼
+  const deleteStorage = document.querySelector("#deleteStorage")
+  deleteStorage.addEventListener("click",function (){
+     localStorage.clear();
+  })
+</script>
+</body>
+</html>

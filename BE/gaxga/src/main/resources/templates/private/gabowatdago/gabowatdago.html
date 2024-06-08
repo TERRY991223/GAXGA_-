@@ -1,0 +1,92 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/gabowatdago.css}">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <title>GAXGA</title>
+</head>
+<body>
+<th:block th:replace="~{public/layouts/header2 :: header}"></th:block>
+    <div class = "gbMain">
+        <div class="intro">
+      <div class="left">
+        <div class="pageName">가봤다고</div>
+        <div class="thema">
+            <a href="#" th:each="themas :${themaList}" onclick="themaClick()" th:attr="data-filter=${themas}" >
+                <span th:text="${themas}" ></span>
+            </a>
+        </div>
+      </div>
+      <div class="center">
+        <button class="prev-btn" onclick="prevCategory()">&lang;&nbsp;</button>
+        <div class="cate" id="cate">
+            <div class="list">
+                <a href="#" style="text-decoration-line: none" data-filter="지역">지역</a>
+                <a href="#" style="text-decoration-line: none" data-filter="강원">강원</a>
+                <a href="#" style="text-decoration-line: none" data-filter="경기">경기</a>
+                <a href="#" style="text-decoration-line: none" data-filter="경남">경남</a>
+                <a href="#" style="text-decoration-line: none" data-filter="경북">경북</a>
+                <a href="#" style="text-decoration-line: none" data-filter="광주">광주</a>
+                <a href="#" style="text-decoration-line: none" data-filter="대구">대구</a>
+                <a href="#" style="text-decoration-line: none" data-filter="대전">대전</a>
+                <a href="#" style="text-decoration-line: none" data-filter="부산">부산</a>
+                <a href="#" style="text-decoration-line: none" data-filter="서울">서울</a>
+                <a href="#" style="text-decoration-line: none" data-filter="세종">세종</a>
+                <a href="#" style="text-decoration-line: none" data-filter="울산">울산</a>
+                <a href="#" style="text-decoration-line: none" data-filter="인천">인천</a>
+                <a href="#" style="text-decoration-line: none" data-filter="전남">전남</a>
+                <a href="#" style="text-decoration-line: none" data-filter="전북">전북</a>
+                <a href="#" style="text-decoration-line: none" data-filter="제주">제주</a>
+                <a href="#" style="text-decoration-line: none" data-filter="충남">충남</a>
+                <a href="#" style="text-decoration-line: none" data-filter="충북">충북</a>
+            </div>
+
+        </div>
+        <button class="next-btn" onclick="nextCategory()">&nbsp;&rang;</button>
+        <button type="button" class="newPostB"
+                  onclick="window.location.href='/gabowatdagoing_p'"> NEW + </button>
+      </div>
+      <div class="right">
+            <input type="search" placeholder="search">
+      </div>
+     </div>
+    <div class="subject">
+      <div class="left" id="article">
+        <a th:href="@{'/gabowatdago/'+${name.id}}" th:each="name :${gabowatdagoList}" th:attr="data-type=${name.local}, data-type2=${name.thema}">
+<!--        <span style="display: none" th:text:="${name.id}"></span>-->
+          <span id="ga_loc" th:text="${name.local}" ></span>
+          <span th:text="${name.thema}"></span>
+          <span th:text="${name.title}"></span>
+          <div id="gabowatdago_id" th:text="${name.image}"></div>
+        </a>
+
+      </div>
+      <div class="right"><img id="image" src="/img/loc/부산/부산-다대포해수욕장.jpg" alt=""></div>
+    </div>
+    <script th:src="@{/js/gab_carousel2.js}"></script>
+    <script th:src="@{/js/menu2.js}"></script>
+    <script th:src="@{/js/gab_search.js}"></script>
+    <script>
+        let image_box = document.getElementById("image");
+        var article_box = document.querySelectorAll("#article a");
+        var change_box = document.getElementById("gabowatdago_id").innerText;
+
+        article_box.forEach(function(article_box) {
+            article_box.addEventListener("mouseover", function() {
+                change_box = this.querySelector("#gabowatdago_id").innerText;
+                var firstImage = change_box.split(',')[0]; // 쉼표로 분리하고 첫 번째 요소를 선택
+
+                // 첫 번째 이미지가 비어있는지 확인하고, 비어있다면 디폴트 이미지로 설정
+                if (!firstImage) {
+                    image_box.src = '/img/loc/부산/부산-다대포해수욕장.jpg'; // 디폴트 이미지 경로 설정
+                } else {
+                    image_box.src = '/upload/' + firstImage; // 첫 번째 이미지 파일 이름만 사용
+                }
+            });
+        });
+    </script>
+</div>
+  </body>
+  </html>

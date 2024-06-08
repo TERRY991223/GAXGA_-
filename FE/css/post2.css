@@ -1,0 +1,306 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+header{
+  position: sticky;
+  display: flex;
+  top: 0px;
+  height: 100px;
+  align-items: center;
+  z-index: 100;
+  /* background-color: black; */
+}
+.element{
+  width: 33%;
+}
+
+.mainP{
+  display: flex;
+}
+
+.mainP .element1{
+  width: 100%;
+}
+.mainP #profile {
+  height: 50px; 
+  padding-left: 30px;
+}
+
+.mainP #logo{
+  font-family: 'DMSerif';
+  font-weight: 500;
+  font-size: 35px;
+  text-align: center;
+
+}
+#logo a {
+  text-decoration-line: none;
+  color: #FFFFFF;
+  font-size: 60px;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+#elementMenu {
+  text-align: right;
+  padding-right: 30px;
+}
+.element #menutap {
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+
+}
+
+#menutap{
+  font-family: 'DMSerif';
+  font-weight: 500;
+  font-size: 30px;
+  color: white;
+  text-align: right;
+  list-style: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+}
+
+#menuTapPage{
+  background-color: black;
+  
+  width: 1920px;
+  height: 1080px;
+  position :absolute;
+  top : 100px;
+  left: 0;
+  display: none;
+}
+.menuPage{
+  display: flex;
+  flex-direction: column;
+  background-color: #063F3B;
+  width: 100%;
+  height: 600px;
+}
+.companyContents{
+  display: flex;
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  width: 100%;
+  height: 95%;
+}
+.companyContents #companyInfo{
+  letter-spacing : 4px;
+  text-align: right;
+  font-size: 25px;
+  color: #CDCBCB;
+}
+.companyContents #socialShare img {
+  width: 376PX;
+  height: 55px;
+  margin: 10px;
+}
+.menu {
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  width: 50%;
+  font-size: 72px;
+  list-style-type: none;
+  color: #063F3B;
+  text-align: left;
+  margin-left: 60px;
+}
+.menu ul {
+  list-style-type: none;
+  
+}
+.menu ul li {
+  margin: 20px 0px;
+}
+.menu ul li a {
+  text-decoration-line: none;
+  
+}
+.menu ul li a:visited{
+  color: #CDCBCB;
+  
+}
+#rightContent {
+  width: 50%;
+  text-align: right;
+  margin-right: 60px;
+  margin-top: 320px;
+}
+
+#policy {
+  font-family: 'GmarketSans';
+  font-size: 25px;
+  width: 100%;
+  height: 10%;
+  list-style: none;
+  text-align: center;
+}
+#policy ul li {
+  list-style-type: none;
+  display: inline;
+  
+}
+#policy ul li a {
+  color: #CDCBCB;
+  text-decoration-line: none;
+  
+}
+#policy ul li a:visited{
+  color: #CDCBCB;
+
+}
+/* header fin */
+
+.wrap{
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height:90%;
+  justify-content: center;
+  color: #6A6A6A;
+}
+
+.post-result{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100% ;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  margin-left: 2%;
+  /* margin-right: 2%; */
+}
+
+.post-wrap{
+
+}
+.title-box{
+  height: 10%;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+input[type="button"]{
+  width: 20%;
+  background-color: #007bff;
+  color:#fff;
+  cursor: pointer;
+  margin-left: 5px;
+  border : none;
+  border-radius: 5px;
+}
+#map {
+  width: 100%;
+  height: 370px; /* 지도의 높이 설정 */
+  border: 1px black dotted;
+  box-sizing: border-box;
+  margin-bottom: 35px;
+}
+.event-list{
+  width: 100%;
+  height: 100%;
+}
+
+.review-title{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-title h2{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 70px;
+  padding-right: 20px;
+}
+.review-title p{
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  font-size: 60px;
+  padding-left: 20px;
+}
+
+form{
+  width: 100%;
+  height: 90%;
+}
+.review-name{
+  height: 8%;
+  width: 97%;
+  margin:15px auto 20px;
+}
+.review-name input{
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  font-size: 35px;
+  border: none;
+  box-sizing: border-box;
+}
+#line{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.select{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* height: 3%; */
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  width: 97%;
+  margin: 13px auto 20px;
+}
+
+.file-area{
+  display: flex;
+  flex-direction: row;
+  width: 97%;
+  margin: 0 auto 15px
+}
+
+#textContent textarea{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px;
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  font-size: 20px;
+  color: black;
+}
+
+#address_Area{
+  display: flex;
+  width: 100%;
+  margin-top: 45px;
+}
+#address_Area label{
+  width: 10%;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+}
+#address_Area input:first-child{
+  width: 20%;
+}
+#address_Area input:not(:first-child){
+  width: 35%;
+}
+#submit_Area input{
+  font-family: 'GmarketSans';
+  font-weight: 500;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <title>GAXGA_LOGIN</title>
+</head>
+<body>
+<script>
+    let message = "[[${msg}]]";
+    if(message != ""){
+        alert(message);
+    }
+</script>
+<div id="container">
+    <div id="login_main">
+        <div id="top">
+            <a th:href="@{/main}"><h2>GA X GA</h2></a>
+        </div>
+        <div id="middle">
+            <h3>Login</h3>
+            <form method="post" action="/login" id="login_form">
+                <div id="login_area">
+                    <div id="id_area">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="gaId" id="gaId" placeholder="아이디를 입력하세요." maxlength="12" autocomplete="username" th:value="${saveUserId}">
+                    </div>
+                    <div id="password_area">
+                        <i class="fa-solid fa-unlock"></i>
+                        <input type="password" name="gaPass" id="gaPass" placeholder="비밀번호를 입력하세요." maxlength="12" autocomplete="off">
+                    </div>
+                </div>
+                <label for="saveId">
+                    <input type="checkbox" id="saveId" name="saveUserId" th:checked="${isSaveIdChecked}"> 아이디 저장하기
+                </label>
+                <input type="submit" value="로그인" id="btn">
+                <div id="findInfo">
+                    <a th:href="@{findInfo}"><input type="button" value="아이디/비밀번호 찾기" id="find_Id"></a>
+                    <div class="line"></div>
+                    <a th:href="@{joinMembership}"><input type="button" value="회원 가입" id="joinMembership"></a>
+                </div>
+            </form>
+        </div>
+        <div id="bottom">
+            <div id="agreement">
+                <span><a th:href="@{terms.html}">이용약관</a></span>
+                <span><a th:href="@{privacy.html}">개인정보처리방침</a></span>
+                <span><a th:href="@{copyright.html}">저작권정책</a></span>
+            </div>
+            <div id="info">
+                <p>
+                    <b>GA X GA</b>
+                    Copyright © All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/1e9b513c90.js" crossorigin="anonymous"></script>
+</body>
+</html>

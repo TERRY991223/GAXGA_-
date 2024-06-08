@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <link rel="stylesheet" th:href="@{/css/post2.css}">
+    <title>GAXGA</title>
+</head>
+<body>
+<th:block th:replace="~{public/layouts/header2 :: header}"></th:block>
+<div class="wrap">
+    <div class="post-result">
+        <div class="review-title">
+            <a href="/gabowatdago"><h2>가봤다고</h2></a>
+            <p>후기 게시글 작성</p>
+        </div>
+        <form action="/gabowatdago/create" method="POST" id="myForm" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class="review-name">
+                <input id="title_box" name="title" type ="text" maxlength="40" placeholder="제목을 입력하세요">
+            </div>
+            <div id="line"></div>
+            <div class="select">
+                <div class="local" style="width: 20%;">
+                    <!--            <label>지역 선택 :</label>-->
+                    <select name="local" class="custom-select">
+                        <option selected>지역</option>
+                        <option th:each ="locations: ${locList}" th:text="${locations}"></option>
+                    </select>
+                </div>
+                <div class="tema" style="width: 20%";>
+                    <!--            <label>테마 선택:</label>-->
+                    <select name="thema" class="custom-select">
+                        <option selected>테마</option>
+                        <option th:each ="themas: ${themaList}" th:text="${themas}">산</option>
+                    </select>
+                </div>
+                <div class="date" style="width: 60%; text-align: right; font-size: 20px">
+                </div>
+            </div>
+            <div class="file-area">
+                <div class="file-input" style="width: 50%;">
+                    <label> 여행지 사진 첨부 </label>
+                    <div class="input-group mb-3">
+                        <input type="button" value="첨부하기" onclick="document.getElementById('inputGroupFile03').click();">
+                        <input type="file" class="form-control" id="inputGroupFile03"
+                               multiple accept="image/*" name="image" style="display: none">
+                    </div>
+                </div>
+                <div class="writer" style="width: 50%; text-align: right; border: none; font-size: 20px" th:text="${userNick}"></div>
+                <input name="gaId" th:value="${gaId}" style="display: none">
+                <input name="gaNick" th:value="${userNick}" style="display: none">
+            </div>
+            <div id="uploadedImages" style="margin-top: 20px;"></div>
+            <div id="textContent">
+                <textarea name="content" id="content" cols="130" rows="20" placeholder="내용을 입력해주세요"></textarea>
+            </div>
+
+            <div id="address_Area">
+                <label><a id="addressA">여행지 주소</a></label>
+                <div class="input-group mb-3" style="margin: 0 0 10px 10px;">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="sample5_execDaumPostcode()">주소 검색</button>
+                    <input style="height: 25px" type="text" name="address"  id="sample5_address" placeholder="주소">
+                    <input style="height: 25px" type="text" name="de_address" id="sample5_detailAddress" placeholder="상세주소를 입력해주세요!">
+                </div>
+            </div>
+            <div id="map"></div>
+            <input type="hidden" name="lat" id="latitude">
+            <input type="hidden" name="lng" id="longitude">
+            <input type="hidden" name="likeCount" th:value="0">
+            <div id="submit_Area">
+                <button type="submit" id="submitButton" class="btn btn-secondary" >게시하기</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:src="@{'//dapi.kakao.com/v2/maps/sdk.js?appkey=6d7e2f086ffa97eb8f4b35fa8cc12439&libraries=services'}"></script>
+<script th:src="@{https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js}"></script>
+<script th:src="@{/js/post.js}"></script>
+<script th:src="@{/js/menu.js}"></script>
+<script th:src="@{/js/fileUpload.js}"></script>
+<script th:src="@{/js/form_validation.js}"></script>
+</body>
+</html>

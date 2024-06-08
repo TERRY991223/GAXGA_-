@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('../fonts/GmarketSansTTFBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('../fonts/GmarketSansTTFMedium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('../fonts/GmarketSansTTFLight.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face{
+  font-family: 'Multicolore';
+  src: url('../fonts/Multicolore\ Pro.otf') format('opentype');
+}
+@font-face{
+  font-family: 'DMSerif';
+  src:url('../fonts/DMSerifDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face{
+  font-family: 'DMSerif';
+  src:url('../fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face{
+  font-family: 'Jalnan';
+  src:url('../fonts/Jalnan2TTF.ttf') format('truetype');
+}

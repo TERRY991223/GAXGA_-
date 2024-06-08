@@ -1,0 +1,164 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#login_main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#login_main #top{
+margin: 40px;
+}
+
+#login_main #top h2{
+  font-family: 'DMSerif';
+  font-weight: 500;
+  font-size: 60px;
+}
+#login_main #top a{
+  text-decoration-line: none;
+  color: black;
+}
+#login_main #middle{
+  width: 550px;
+  border-radius: 5%;
+  box-shadow : 0px 3px 5px 0px #989898
+}
+
+#login_main #middle h3{
+  text-align: center;
+  margin: 17px 0px 60px;
+  font-size: 35px;
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  color: #a9a9a9;
+}
+
+#login_main #middle #login_form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+#login_main #middle #login_area{
+  height: 90px;
+  width: 80%;
+}
+#login_main #middle #login_area div{
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login_main #middle #login_area div i{
+  font-size: 30px;
+  text-align: center;
+  width: 20%;
+}
+#login_main #middle #login_area div input{
+  width: 70%;
+  height: 70%;
+  text-align: justify;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  padding-left: 7px;
+}
+#login_main #middle #login_area div input:focus{
+  outline: none;
+}
+
+#login_main #middle label{
+  height: 25px;
+  width: 100%;
+  text-align: center;
+  margin: 40px 0 65px;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  color: #6b6b6b;
+}
+
+#login_main #middle #btn{
+  height: 85px;
+  width: 470px;
+  font-family: 'Jalnan';
+  background-color: #063F3B;
+  font-size: 25px;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+#login_main #middle #findInfo{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 10px 0;
+  padding-right: 50px;
+}
+#login_main #middle #findInfo .line{
+  background-color: #a9a9a9;
+  width: 1px;
+  height: 40px;
+  margin: 0 20px;
+}
+#login_main #middle #findInfo input{
+  height: 40px;
+  line-height: 30px;
+  font-size: 12px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  color: #a9a9a9;
+}
+
+#login_main #bottom{
+  height: 180px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+}
+#login_main #bottom #agreement{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-size: 12px;
+  height: 20%;
+  align-items: center;
+}
+#login_main #bottom #agreement span{
+  width: 33%;
+}
+#login_main #bottom #agreement span:not(:last-child){
+  border-right: 1px solid black;
+}
+#login_main #bottom #info{
+  height: 20%;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  font-size: 12px;
+}
+#login_main #bottom #info b{
+  font-size: 20px;
+  font-family: 'GmarketSans';
+  font-weight: 600;
+}
+
+#login_main #bottom #agreement a{
+  text-decoration-line: none;
+}
+#login_main #bottom #agreement a:visited{
+  color: black;
+}

@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    /*scrollbar-width: thin;*/
+}
+body{
+    height: 100vh;
+}
+.gMain{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+}
+
+header{
+    position: sticky;
+    z-index: 100;
+    height: 100px;
+    top: 0px;
+    align-items: center;
+
+}
+.element{
+    width: 33%;
+}
+
+.mainP{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.mainP .element1{
+    width: 100%;
+}
+.mainP #profile {
+    height: 50px;
+    padding-left: 30px;
+}
+
+.mainP #logo{
+    font-family: 'DMSerif';
+    font-weight: 500;
+    font-size: 35px;
+    text-align: center;
+    height: 79%;
+
+}
+#logo a {
+    text-decoration-line: none;
+    color: #FFFFFF;
+    font-size: 60px;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+#elementMenu {
+    text-align: right;
+    padding-right: 30px;
+}
+.element #menuTap {
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+
+}
+
+#menuTap{
+    font-family: 'DMSerif';
+    font-weight: 500;
+    font-size: 30px;
+    color: white;
+    text-align: right;
+    list-style: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+#menuTapPage{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position :absolute;
+    top : 96px;
+    left: 0;
+}
+.menuPage{
+    display: flex;
+    flex-direction: column;
+    background-color: #063F3B;
+    width: 100%;
+    height: 600px;
+}
+.companyContents{
+    display: flex;
+    font-family: 'GmarketSans';
+    font-weight: 400;
+    width: 100%;
+    height: 95%;
+}
+.companyContents #companyInfo{
+    letter-spacing : 4px;
+    text-align: right;
+    font-size: 25px;
+    color: #CDCBCB;
+}
+.menu {
+    font-family: 'GmarketSans';
+    font-weight: 400;
+    width: 50%;
+    font-size: 72px;
+    list-style-type: none;
+    color: #063F3B;
+    text-align: left;
+    margin-left: 60px;
+}
+.menu ul {
+    list-style-type: none;
+
+
+}
+.menu ul li {
+    margin: 20px 0px;
+
+}
+.menu ul li a {
+    text-decoration-line: none;
+
+}
+.menu ul li a:visited, a:link{
+    color: #CDCBCB;
+
+}
+#hRightContent {
+    width: 50%;
+    text-align: right;
+    margin-right: 60px;
+    margin-top: 391px;
+}
+
+#policy {
+    font-family: 'GmarketSans';
+    font-size: 25px;
+    width: 100%;
+    height: 10%;
+    list-style: none;
+    text-align: center;
+}
+#policy ul li {
+    list-style-type: none;
+    display: inline;
+
+}
+#policy ul li a {
+    color: #CDCBCB;
+    text-decoration-line: none;
+
+}
+#policy ul li a:visited{
+    color: #CDCBCB;
+
+}
+
+.intro {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 30%;
+    background-color: #000;
+    color: #fff;
+}
+.intro .left, .center, .right {
+    flex: 1;
+    padding: 10px;
+    resize: none;
+    white-space: nowrap;
+
+}
+.intro .left{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.intro .left .pageName {
+    display: flex;
+    align-items: end;
+    font-size: 98px;
+    font-family: 'GmarketSans';
+    font-weight: 600;
+    margin-top: 107px;
+    margin-left: 17px;
+}
+.intro .left .thema {
+    display: flex;
+    justify-content: start;
+    align-self: baseline;
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-size: 25px;
+}
+.subject .left span{
+    margin: 0px 4px;
+}
+.intro .left .thema a{
+    width: 100%;
+    text-decoration-line: none;
+    color: #adadad;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.intro .left .thema div{
+    width: 1px;
+    background-color: #adadad;
+    height: 30px;
+    margin: 0px 5px;
+    align-self: center;
+}
+.intro .left .thema a:hover {
+    color: #969696
+}
+.intro .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    position: relative;
+    max-width: 120px;
+    padding: 0 20px;
+}
+.intro .center .cate{
+    overflow: hidden;
+    /* white-space: nowrap; */
+    padding: 10px;
+    margin-top: 15px;
+}
+.intro .center .list {
+    display: inline-block;
+    font-family: 'GMARKETSANSB';
+    font-family: 'GmarketSans';
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+}
+.intro .center .list a{
+    text-decoration-line: none;
+    color: #ffffff;
+}
+.intro .center .list a:hover {
+    color: #063F3B;
+}
+.intro .center button {
+    text-decoration-line: none;
+    color: #fff;
+    font-size: 50px;
+    border:none;
+    background-color: #000;
+}
+.intro .center .prev-btn,
+.intro .center .next-btn {
+    position: absolute;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    background: none;
+    cursor: pointer;
+}
+.center .prev-btn {
+    left: 0;
+}
+.center .next-btn {
+    right: 0;
+}
+.intro .center button:hover {
+    color: #063F3B;
+}
+.intro .right {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.intro .right input {
+    width: 25%;
+    height: 35px;
+    background-color: transparent;
+    font-size: 35px;
+    line-height: 1;
+    text-align: center;
+    font-family: 'Cooper Black';
+    /*font-weight: 400;*/
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    border-bottom-width: 1px;
+    margin-right: 20px;
+}
+.intro ::placeholder{
+    color: #27292A;
+}
+.subject {
+    width: 100%;
+    height: 70%;
+    background-color: #000;
+    display: flex;
+    border: 1px;
+}
+.subject .left{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'GMARKETSANSB';
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.subject .left .locationArea {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: #adadad;
+    font-family: 'GmarketSans';
+    font-weight: 600;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    /*text-rendering: optimizeLegibility;*/
+}
+
+.subject .left .locationArea .locationAreaList {
+    width: 100%;
+    display: flex;
+    height: 100px;
+}
+
+.subject .left .locationArea a{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration-line: none;
+    color: #adadad;
+}
+
+.subject .left .locationArea a:hover{
+    text-decoration-line: none;
+    background-color: #063F3B;
+    color: #fff;
+}
+
+.subject .right {
+    padding: 0;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.subject .right .imageArea{
+    width: 100%;
+}
+
+.subject .right img{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+

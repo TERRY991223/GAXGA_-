@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/myPaga.css}">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>GAXGA_MYPAGE</title>
+</head>
+<body>
+<img src="/img/마이페이지배경.png" style="position: absolute">
+<th:block th:replace="~{public/layouts/header2 :: header}"></th:block>
+<div id="container">
+    <div id="myPage_main">
+        <div id="contents">
+            <aside id="leftContent">
+                <ul>
+                    <li>
+                        <div>
+                            <img th:src="@{'/upload/'+${userInfo.gaP_Image}}" alt="">
+                            <p th:text="${userDetail.getGaNick()}">홍길동 님</p>
+                        </div>
+                    </li>
+                    <li><button onclick="SelectedContent(0)">프로필 정보 수정</button></li>
+                    <li><button onclick="SelectedContent(1)">나의 작성글</button></li>
+                    <li><button onclick="SelectedContent(2)">나의 베스트 게시글</button></li>
+                    <li><button onclick="SelectedContent(3)" id="lastBtn">여행지 장바구니</button></li>
+                </ul>
+                <div id="logoutBtn">
+                   <button> <a href="/user/logout">Logout</a></button>
+                </div>
+            </aside>
+            <section id="rightContent">
+                <div id="subHeader"></div>
+                <div id="top" class="content">
+                    <div id="modifyProfile" class="selectedArea active">
+                        <div id="profileImage">
+                            <img id="myImage" th:src="@{'/upload/'+${userInfo.gaP_Image}}" alt="프로필 이미지">
+                            <form action="/updateProfileImage" method="post" enctype="multipart/form-data">
+                                <input type="button" value="프로필 사진 변경" onclick="document.getElementById('file').click();">
+                                <input type="file" name="file" id="file" style="display: none;" onchange="previewAndUpdateImage();">
+                                <input type="hidden" name="userCode" th:value="${userCode}">
+                                <button  id="imageSaveBtn" type="submit">저장하기</button>
+                            </form>
+                        </div>
+                        <div id="modify">
+                            <p>정보 수정</p>
+                        </div>
+                        <div id="profileInfo">
+                            <form action="/myPage" method="post" style="height: 100%">
+                                <ul>
+                                    <li>
+                                        <label for="nickname">닉네임</label>
+                                        <span id="showNickname" th:text="${userDetail.getGaNick()}">Nickname</span>
+                                        <input type="text" name="gaNick" id="nickname" class="hidden" placeholder="변경할 닉네임을 입력하세요 (4~12글자)" maxlength="12" minlength="4">
+                                        <input type="hidden" name="gaP_Image" th:value="${userImage}">
+                                        <button type="button" id="modifyNickname" onclick="ModifyProfileBtn(0)"><i class="fa-solid fa-pen"></i></button>
+                                        <button type="submit" id="nicknameBtn" class="hidden" onclick="modifySaveBtn(0)">저장</button>
+                                    </li>
+                                    <li>
+                                        <label for="phoneNumber">전화번호</label>
+                                        <span id="showPhoneNumber" th:text="${userDetail.getGaPhone()}">010-0000-0000</span>
+                                        <input type="text" name="gaPhone" id="phoneNumber" class="hidden" oninput="AutoHyphen(this)" placeholder="변경할 전화번호를 입력하세요">
+                                        <button type="button" id="modifyPhoneNumber" onclick="ModifyProfileBtn(1)"><i class="fa-solid fa-pen"></i></button>
+                                        <button type="submit" id="phoneNumberBtn" class="hidden" onclick="modifySaveBtn(1)">저장</button>
+                                    </li>
+                                    <li>
+                                        <label for="pass">비밀번호</label>
+                                        <span id="showPass">비밀번호 변경</span>
+                                        <input type="password" name="gaPass" id="pass" class="hidden" placeholder="변경할 비밀번호를 입력하세요">
+                                        <button type="button" id="modifyPass" onclick="ModifyProfileBtn(2)"><i class="fa-solid fa-pen"></i></button>
+                                        <button type="submit" id="passBtn" class="hidden" onclick="modifySaveBtn(2)">저장</button>
+                                    </li>
+                                    <li>
+                                        <label for="email">이메일</label>
+                                        <span id="showEmail" th:text="${userDetail.getGaEmail()}">abcdefg@gmail.com</span>
+                                        <input type="email" name="gaEmail" id="email" class="hidden" placeholder="변경할 이메일을 입력하세요">
+                                        <button type="button" id="modifyEmail" onclick="ModifyProfileBtn(3)"><i class="fa-solid fa-pen"></i></button>
+                                        <button type="submit" id="emailBtn" class="hidden" onclick="modifySaveBtn(3)">저장</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="myWrited" class="selectedArea">
+                        <div id="myWritedArea">
+                            <div class="myWritedList" th:each="myBoardList: ${myBoardList}">
+                                <img th:src="${myBoardList.image != null ? '/upload/' + #strings.arraySplit(myBoardList.image, ',')[0] : '/upload/마이페이지 디폴트.png'}" alt="Board Image"/>
+                                <a th:href="@{'/gabowatdago/'+*{myBoardList.id}}" th:text="*{myBoardList.title}"></a>
+                                <span th:text="*{#temporals.format(myBoardList.regDate, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                                <button type="button" id="BoardDeleteBtn" th:data-Board-Id="${myBoardList.id}" style="background-color: transparent">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 베스트글 -->
+                    <div id="saved" class="selectedArea">
+                        <div id="savedListArea">
+                            <div class="savedList" th:each="best: ${bestBoardList}">
+                                <img th:src="${best.image != null ? '/upload/' + #strings.arraySplit(best.image, ',')[0] : '/upload/마이페이지 디폴트.png'}" alt="Board Image"/>
+                                <a th:href="@{'/gabowatdago/'+*{best.id}}" th:text="*{best.title}"></a>
+                                <span th:text="*{#temporals.format(best.regDate, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                                <span th:text="'좋아요 ( '+ *{best.likeCount} + ' )'"></span>
+                                <button type="button" id="bestDeleteBtn" th:data-Board-Id="${best.id}" style="background-color: transparent">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 여행지 -->
+                    <div id="receiveLike" class="selectedArea">
+                        <div id="receiveLikeArea">
+                            <div class="receiveLikeList" th:if="${myList.user.userCode == userCode}" th:each="myList: ${myList}">
+                                    <img th:src="'/'+${myList.gpid.img}">
+                                <a th:href="@{'/gabojagoing/' + ${myList.gpid.id}}">
+                                    <span th:text="*{myList.gpid.region.name}" id="myGpRegion"></span>
+                                    <span th:text="*{myList.gpid.thema.name}" id="myGpTheme"></span>
+                                    <span th:text="*{myList.gpid.name}" id="myGpName"></span>
+                                    <br>
+                                    <span th:text="*{myList.gpid.state}" id="myGpState"></span>
+                                </a>
+                                    <span th:text="*{#temporals.format(myList.gpid.posting, 'yyyy-MM-dd HH:mm:ss')}"></span>
+
+                        <input type="hidden" id="jjim_input" th:value="${myList.user.userCode}">
+                        <input type="hidden" id="gabojago_id" th:value="${myList.gpid.id}">
+                                <button type="button" id="deleteBtn" style="background-color: transparent">삭제</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="middle" class="content">
+                    <div class="gaga" id="gabo">
+                        <div class="gagaTitle">
+                            <h4 style="font-family: 'GmarketSans'; font-weight: 500; color: #454545;">가보자고</h4>
+                        </div>
+                        <p><i class="fa-regular fa-bookmark"><span th:text="${jjimCount}" style="margin-left: 10px"></span></i></p>
+                    </div>
+                    <div class="gaga" id="gabowa">
+                        <div class="gagaTitle">
+                            <h4 style="font-family: 'GmarketSans'; font-weight: 500; color: #454545;">가봤다고</h4>
+                        </div>
+                        <p><i class="fa-regular fa-heart"><span th:text="${likeCounts}" style="margin-left: 10px"></span></i></p>
+                    </div>
+                </div>
+                <div id="bottom" class="content">
+                    <div id="firstEvent" class="event">
+                        <a th:href="@{/event}">
+                            <img src="../img/이벤트진행중배너1s.png" alt="" width="100%" height="100%">
+                        </a>
+                    </div><div id="defaultEvent" class="event">
+                        <img src="../img/마이페이지이벤트바로가기.png" alt="">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/1e9b513c90.js" crossorigin="anonymous"></script>
+<script src="/js/myPage.js"></script>
+<script>
+    function previewAndUpdateImage() {
+        var file = document.getElementById('file').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            // 업데이트된 이미지 URL로 myImage의 src 속성을 설정
+            document.getElementById('myImage').src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+<script src="/js/basicSetting.js" th:src="@{/js/basicSettings.js}"></script>
+<script src="/js/menu.js"></script>
+<script th:src="@{/js/gabojago/deleteJjim.js}"></script>
+<script th:src="@{/js/deleteBoard.js}"></script>
+<script th:src="@{/js/deleteBest.js}"></script>
+</body>
+</html>

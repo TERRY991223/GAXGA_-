@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/fonts.css}">
+    <link rel="stylesheet" th:href="@{css/joinMembership.css}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>GAXGA_JOINMEMBERSHIP</title>
+</head>
+<body>
+<script>
+    let message = "[[${msg}]]";
+    if(message != ""){
+        alert(message);
+    }
+</script>
+<div id="container">
+    <div id="inner">
+        <div id="membershipLogo">
+            <a th:href="@{/main}"><h2>GA X GA</h2></a>
+        </div>
+        <div id="content">
+            <h3>Sign Up</h3>
+            <form action="/joinMembership/create" method="post" onsubmit="return validateForm()">
+                <div id="form_content">
+                    <div id="form_id" class="inputs">
+                        <div class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="inputInfo">
+                            <input type="text" name="gaId" id="gaId" placeholder="아이디를 입력하세요.(4~12글자)" maxlength="12" autocomplete="username">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div id="form_password" class="inputs">
+                        <div class="icon">
+                            <i class="fa-solid fa-unlock"></i>
+                        </div>
+                        <div class="inputInfo">
+                            <input type="password" name="gaPass" id="gaPass" placeholder="비밀번호를 입력하세요.(8~12글자)" maxlength="12" autocomplete="current-password">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div id="form_nickname" class="inputs">
+                        <div class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="inputInfo">
+                            <input type="text" name="gaNick" id="gaNick" placeholder="닉네임을 입력하세요.(4~12글자)" maxlength="12">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div id="form_phoneNumber" class="inputs">
+                        <div class="icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="inputInfo">
+                            <input type="tel" name="gaPhone" id="gaPhone" placeholder="휴대전화번호를 입력하세요" maxlength="13" minlength="13" oninput="AutoHyphen(this)">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div id="form_address" class="inputs">
+                        <div class="icon">
+                            <i class="fa-solid fa-address-card"></i>
+                        </div>
+                        <div class="inputInfo">
+                            <div class="divide_Address">
+                                <input type="text" name="gaAddress" id="postal" placeholder="주소를 입력하세요" readonly>
+                                <input type="text" name="gaDetailAddress" id="detailAddress" placeholder="나머지를 입력하세요">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div id="find_Address">
+                            <button type="button">찾기</button>
+                        </div>
+                    </div>
+                    <div id="form_email" class="inputs">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div id="inputEmail">
+                            <input type="text" name="" id="userEmail" placeholder="이메일을 입력하세요">
+                        </div>
+                        <div id="selectEmail">
+                            <span>@</span>
+                            <select name="emailType" id="emailType">
+                                <option value="naver.com">naver.com</option>
+                                <option value="google.com">google.com</option>
+                                <option value="nate.com">nate.com</option>
+                            </select>
+                            <input type="hidden" name="gaEmail" id="combinedEmail">
+                        </div>
+                    </div>
+                    <input type="hidden" name="gaP_Image" value="profile.png">
+                </div>
+                <div id="btn_submit">
+                    <input type="submit" value="확인" class="submit" id="submitBtn">
+                    <input type="button" value="취소" class="submit" onclick="location.href='login.html'">
+                </div>
+            </form>
+        </div>
+        <div id="bottom">
+            <div id="agreement">
+                <span><a th:href="@{terms.html}">이용약관</a></span>
+                <span><a th:href="@{privacy.html}">개인정보처리방침</a></span>
+                <span><a th:href="@{copyright.html}">저작권정책</a></span>
+            </div>
+            <div id="info">
+                <p>
+                    <b>GA X GA</b>
+                    Copyright © All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/1e9b513c90.js"></script>
+<script src="js/basicSettings.js" th:src="@{/js/basicSettings.js}"></script>
+<script src="js/joinMembership.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</body>
+</html>

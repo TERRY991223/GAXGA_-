@@ -1,0 +1,343 @@
+html{
+  height: 100%;
+}
+
+
+*{
+  margin: 0px;
+  padding: 0px;  
+}
+
+video {
+  position :absolute;
+  top : 0;
+  left: 0;
+  width : 100%;
+  /* height: 100vh; */
+  object-fit : cover;
+  z-index: 0;
+}
+.video-container {
+  /* position: relative; */
+  width : 100%;
+  height : 100vh;
+  overflow : hidden;
+}
+
+.page {
+  width: 100%;;
+  height: 1080px; /* 화면 크기만큼 */
+  position: relative;
+  background-color: black;
+}
+
+
+.page #insertP{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 160px;
+  text-shadow: 0px 5px 8px rgb(53, 49, 49);
+  color: white;
+}
+
+
+.page #pageContent1{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.page #pageinfo1{
+  padding-top: 150px;
+  float: left;
+  width: 50%;
+  width: 647px;
+  height: 345px;
+}
+.page #pageImg1{
+  padding-top: 120px;
+  float: left;
+  width: 50%;
+  width: 611px;
+  height: 730px;
+}
+.page #pageImg1 img{
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  border-radius: 20px;
+}
+
+.page .contentBar1{
+  position: absolute;
+}
+
+.page #bar1{
+  width: 875px;
+  height: 12px;
+  background-color: #1F3E0B;
+  top: 60px;
+  left: 110px;
+  border-radius: 3px;
+}
+.page #bar2{
+  width: 765px;
+  height: 7px;
+  background-color: #162B09;
+  top: 80px;
+  left: 110px;;
+  border-radius: 3px;
+  
+}
+.page #bar3{
+  width: 420px;
+  height: 10px;
+  background-color: #1F3E0B;
+  border-radius: 3px;
+  top: 700px;
+  left: 1580px;
+  transform: rotate(90deg);
+
+}
+.page #bar4{
+  width: 375px;
+  height: 7px;
+  background-color: #162B09;
+  border-radius: 3px;
+  top: 724px;
+  left: 1620px;
+  transform: rotate(90deg);
+}
+.page #pageinfo1 p{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 150%;
+  color: #929090;
+}
+.page #pageinfo1 p span{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+.page #GaInfo1{
+  position: absolute;
+  top : 600px;
+  right: 100;
+}
+.page #GaInfo1 p{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 130px;
+  line-height: 30%;
+  color: #FFFFFF;
+}
+.page #GaInfo1 p:not(:first-child){
+padding-left: 180px;
+}
+.page #GaInfo1 p span{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  line-height: 120%;
+  color: #C8FCC0;
+}
+.page #imgInfo1 {
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  font-size: 25px;
+  color: #FFFFFF;
+  float: left;
+}
+.page #imgInfo1 p{
+width: 400px;
+height: 20px;
+top: 80px;
+left: 90px;
+}
+
+.page #insertP2{
+position: absolute;
+width: 1300px;
+/* height: 150px; */
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+font-family: 'GmarketSans';
+font-weight: 600;
+font-size: 150px;
+text-shadow: 0px 5px 8px rgb(53, 49, 49);
+color: white;
+}
+
+.page #pageContent2{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.page #pageImg2{
+  padding-top: 120px;
+  padding-left: 150px;
+  float: right;
+  width: 50%;
+  width: 611px;
+  height: 730px;
+}
+.page #pageImg2 img{
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  border-radius: 20px;
+}
+.page #pageinfo2{
+  padding-top: 150px;
+  padding-right: 150px;
+  text-align: right;
+  float: right;
+  width: 50%;
+  width: 660px;
+  height: 345px;
+}
+
+.page .contentBar2{
+  position: absolute;
+}
+
+.page #bar5{
+  width: 875px;
+  height: 12px;
+  background-color: #A8C9FF;
+  top: 60px;
+  right: 110px;
+  border-radius: 3px;
+}
+.page #bar6{
+  width: 765px;
+  height: 7px;
+  background-color: #5284C3;
+  top: 80px;
+  right: 110px;;
+  border-radius: 3px;
+  
+}
+.page #bar7{
+  width: 420px;
+  height: 10px;
+  background-color: #A8C9FF;
+  border-radius: 3px;
+  top: 700px;
+  right: 1580px;
+  transform: rotate(90deg);
+
+}
+.page #bar8{
+  width: 375px;
+  height: 7px;
+  background-color: #5284C3;
+  border-radius: 3px;
+  top: 724px;
+  right: 1620px;
+  transform: rotate(90deg);
+}
+.page #pageinfo2 p{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 150%;
+  color: #929090;
+}
+.page #pageinfo2 p span{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+.page #GaInfo2{
+  position: absolute;
+  top : 600px;
+  right: 250;
+  
+}
+.page #GaInfo2 p{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  font-size: 130px;
+  line-height: 30%;
+  color: #FFFFFF;
+}
+.page #GaInfo2 p:not(:first-child){
+padding-left: 180px;
+}
+.page #GaInfo2 p span{
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  line-height: 120%;
+  color: #BDE3FF;
+}
+.page #imgInfo2 {
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  font-size: 25px;
+  color: #FFFFFF;
+  float: right;
+}
+.page #imgInfo2 p{
+width: 400px;
+height: 20px;
+top: 80px;
+right: 90px;
+}
+
+footer{
+  background-color: #063F3B;
+}
+
+footer #top{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 390px;
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  font-size: 25px;
+  color: #CDCBCB;
+}
+footer #policy{
+  margin-top: 60px;
+  font-family: 'DMSerif';
+  font-weight: 500;
+  font-size: 25px;
+  color: #CDCBCB;
+  text-align: center;
+}
+footer #policy a{
+  color: #CDCBCB;
+  text-decoration-line: none;
+}
+footer #footerImg{
+  width: 100%;
+  height: 100%;
+}
+footer #backtop{
+  text-align: right;
+  font-family: 'DMSerif';
+  font-weight: 400px;
+}
+footer #backtop a{
+  color: #CDCBCB;
+  text-decoration-line: none;
+}
+footer Img{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 0;
+  justify-content: center;
+  }

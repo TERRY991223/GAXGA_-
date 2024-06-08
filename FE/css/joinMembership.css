@@ -1,0 +1,195 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header{
+  width: 100%;
+  height: 100px;
+  background-color: black;
+}
+
+#inner{
+  width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+#inner #membershipLogo{
+  margin: 40px;
+}
+
+#inner #membershipLogo h2{
+  font-family: 'DMSerif';
+  font-weight: 500;
+  font-size: 60px;
+}
+
+#inner #membershipLogo a{
+  text-decoration-line: none;
+  color: black;
+}
+
+#inner form{
+  display: flex;
+  flex-direction: column;
+  width: 590px;
+}
+
+#inner #content{
+  height: 600px;
+  border-radius: 10px;
+  box-shadow :0px 8px 8px 0px #989898
+}
+
+#inner #content h3{
+  text-align: center;
+  margin: 17px 0 60px;
+  font-size: 35px;
+  font-family: 'GmarketSans';
+  font-weight: 600;
+  color: #a9a9a9;
+}
+
+#inner #form_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 40px 60px
+}
+#inner #form_content .line{
+  width: 350px;
+  height: 1px;
+  background-color: #9a9a9a;
+  margin-top: 14px;
+}
+#inner .inputs{
+  display: flex;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+}
+#inner .inputs input{
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'GmarketSans';
+  font-weight: 400;
+  margin-top: 16px;
+}
+#inner .inputs #postal{
+  margin-top: 0;
+}
+#inner .inputs #address{
+  margin-top: 0;
+  font-size: 13px;
+}
+#inner .inputs input:focus{
+  outline: none;
+}
+#inner .inputs #icon{
+  margin-right: 30px;
+  width: 5%;
+}
+#inner .inputs #inputInfo{
+  width: 60%;
+}
+#inner .inputs i{
+  font-size: 30px;
+  line-height: 40px;
+}
+
+#inner #divide_Address{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+#inner #find_Address{
+  margin-bottom: 20px;
+  
+}
+#inner #find_Address button{
+  height: 30px;
+  width: 90px;
+  background-color: white;
+  border-radius: 3px;
+  border:1px solid black;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+}
+
+#inner #selectEmail{
+  width: 100%;
+  display: flex;
+}
+#inner .inputs #inputEmail{
+  width: 95%;
+}
+#inner #selectEmail span{
+  font-size: 20px;
+  margin-right: 44px;
+}
+#inner #selectEmail select{
+  width: 130px;
+  height: 30px;
+}
+
+#inner #btn_submit{
+  margin: 0 auto;
+}
+#inner #btn_submit .submit{
+  height: 40px;
+  width: 100px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  margin: 10px 20px;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+
+}
+
+#inner #bottom{
+  height: 180px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#inner #bottom #agreement{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-size: 12px;
+  height: 20%;
+  align-items: center;
+}
+#inner #bottom #agreement span{
+  width: 33%;
+}
+#inner #bottom #agreement span:not(:last-child){
+  border-right: 1px solid black;
+}
+#inner #bottom #info{
+  height: 20%;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  font-size: 12px;
+}
+#inner #bottom #info b{
+  font-size: 20px;
+  font-family: 'GmarketSans';
+  font-weight: 600;
+}
+
+#inner #bottom #agreement a{
+  text-decoration-line: none;
+}
+#inner #bottom #agreement a:visited{
+  color: black;
+}
